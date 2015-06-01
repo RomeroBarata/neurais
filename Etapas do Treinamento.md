@@ -10,10 +10,12 @@ Os parâmetros e seus valores são os seguintes:
     * Critério de gradiente minimo [10] -- Não sabemos o que significa
     * Critério mínimo de erro de treinamento  [10] -- Não sabemos o que significa
     * Critério de quantidade máxima de falhas na validação [10]
+    * Número máximo de iterações [10000]
   * Variáveis:
-    * Número máximo de iterações [5000, 10000, 20000]
     * Taxa de apredizagem [0.01, 0.1, 0.5, 0.9]
     * Número de nós na camada intermediária [3, 6, 12]
+    * Algoritmo de aprendizagem [logsig, tansig, randbas]
+    * Função de ativação [learnk, learngd]
 
 Como iremos avaliar todas as combinações possíveis, serão feitos 36 testes para decidir qual a melhor
 combinação de parâmetros.
