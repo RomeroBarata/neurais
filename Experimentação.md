@@ -13,8 +13,8 @@ Os parâmetros e seus valores são os seguintes:
   * Variáveis:
     * Taxa de apredizagem [0.01, 0.1, 0.5, 0.9]
     * Número de nós na camada intermediária [3, 6, 12]
-    * Algoritmo de aprendizagem [Olhar o matlab e escolher 3 algoritmos]
-    * Função de ativação [Olhar o matlab e escolher de 3 funções]
+    * Algoritmo de aprendizagem [Levenberg-Marquardt: 'trainlm' ; Gradient descent with momentum backpropagation: 'traingdm' ; Resilient backpropagation: 'trainrp']
+    * Função de ativação [Hyperbolic tangent sigmoid transfer function: 'tansig' ; Log-sigmoid transfer function: 'logsig']
  
 ##### Etapa 1:
 Nessa etapa iremos variar a taxa de aprendizagem e o número de nós da camada intermediária e testar todas as
