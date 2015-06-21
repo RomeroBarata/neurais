@@ -6,8 +6,8 @@ O processo de experimentação se dará a partir da avaliação do desempenho da
 
 Os parâmetros e seus valores são os seguintes:
   * Fixos:
-    * Critério de gradiente minimo [10]
-    * Critério mínimo de erro de treinamento  [10]
+    * Critério de gradiente minimo [0]
+    * Critério mínimo de erro de treinamento  [0]
     * Critério de quantidade máxima de falhas na validação [10]
     * Número máximo de iterações [10000]
   * Variáveis:
@@ -33,28 +33,25 @@ combinações possíveis. Para isso iremos utilizar a replicação simples como 
   * Nós = 12 e Taxa = 0.9
 
 ##### Etapa 2:
-Nessa segunda etapa iremos selecionar as 3 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com os algoritmos de aprendizagem selecionados (alg1, alg2 e alg3). Os testes serão feitos da seguinte forma:
-  * Alg1 e Comb1
-  * Alg1 e Comb2
-  * Alg1 e Comb3
-  * Alg2 e Comb1
-  * Alg2 e Comb2
-  * Alg2 e Comb3
-  * Alg3 e Comb1
-  * Alg3 e Comb2
-  * Alg3 e Comb3
+Nessa segunda etapa iremos selecionar as 3 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com os algoritmos de aprendizagem selecionados (trainlm, traingdm e trainrp). Os testes serão feitos da seguinte forma:
+  * trainlm e Comb1
+  * trainlm e Comb2
+  * trainlm e Comb3
+  * traingdm e Comb1
+  * traingdm e Comb2
+  * traingdm e Comb3
+  * trainrp e Comb1
+  * trainrp e Comb2
+  * trainrp e Comb3
 
 ##### Etapa 3:
-Nessa terceira etapa iremos selecionar as 3 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com funções de ativação selecionadas (fun1, fun2 e fun3). Os testes serão feitos da seguinte forma:
-  * Fun1 e Comb1
-  * Fun1 e Comb2
-  * Fun1 e Comb3
-  * Fun2 e Comb1
-  * Fun2 e Comb2
-  * Fun2 e Comb3
-  * Fun3 e Comb1
-  * Fun3 e Comb2
-  * Fun3 e Comb3
+Nessa terceira etapa iremos selecionar as 3 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com funções de ativação selecionadas (tansig, logsig). Os testes serão feitos da seguinte forma:
+  * tansig e Comb1
+  * tansig e Comb2
+  * tansig e Comb3
+  * logsig e Comb1
+  * logsig e Comb2
+  * logsig e Comb3
 
 ##### Etapa 4:
 Nessa quarta etapa iremos selecionar as 3 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com os métodos de sampling selecionados (replicação, redução, SMOTE e SMOTE modificado). Os testes serão feitos da seguinte forma:
