@@ -1,0 +1,6 @@
+MSE para o conjunto de treinamento: 0.07455 
+MSE para o conjunto de validacao: 0.07890 
+MSE para o conjunto de teste: 0.06531 
+Confusion Matrix
+        2536         195
+           9          55
