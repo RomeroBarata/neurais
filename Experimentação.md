@@ -32,40 +32,50 @@ combinações possíveis. Para isso iremos utilizar a replicação simples como 
   * Nós = 12 e Taxa = 0.5
   * Nós = 12 e Taxa = 0.9
 
+As melhores combinações foram:
+  * Comb 1 => Nós = 3 e Taxa = 0.01
+  * Comb 2 => Nós = 6 e Taxa = 0.01
+  * Comb 3 => Nós = 12 e Taxa = 0.1
+
 ##### Etapa 2:
 Nessa segunda etapa iremos selecionar as 3 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com os algoritmos de aprendizagem selecionados (trainlm, traingdm e trainrp). Os testes serão feitos da seguinte forma:
-  * trainlm e Comb1
-  * trainlm e Comb2
-  * trainlm e Comb3
-  * traingdm e Comb1
-  * traingdm e Comb2
-  * traingdm e Comb3
-  * trainrp e Comb1
-  * trainrp e Comb2
-  * trainrp e Comb3
+  * trainlm e Comb1 (Nós = 3 e Taxa = 0.01)
+  * trainlm e Comb2 (Nós = 6 e Taxa = 0.01)
+  * trainlm e Comb3 (Nós = 12 e Taxa = 0.1)
+  * traingdm e Comb1 (Nós = 3 e Taxa = 0.01)
+  * traingdm e Comb2 (Nós = 6 e Taxa = 0.01)
+  * traingdm e Comb3 (Nós = 12 e Taxa = 0.1)
+  * trainrp e Comb1 (Nós = 3 e Taxa = 0.01)
+  * trainrp e Comb2 (Nós = 6 e Taxa = 0.01)
+  * trainrp e Comb3 (Nós = 12 e Taxa = 0.1)
+
+As melhores combinações foram:
+  * Comb 1 => trainlm, Nós = 3 e Taxa = 0.01
+  * Comb 2 => trainlm, Nós = 6 e Taxa = 0.01
+  * Comb 3 => trainlm, Nós = 12 e Taxa = 0.1
 
 ##### Etapa 3:
 Nessa terceira etapa iremos selecionar as 3 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com funções de ativação selecionadas (tansig, logsig). Os testes serão feitos da seguinte forma:
-  * tansig e Comb1
-  * tansig e Comb2
-  * tansig e Comb3
-  * logsig e Comb1
-  * logsig e Comb2
-  * logsig e Comb3
+  * tansig e Comb1 (trainlm, Nós = 3 e Taxa = 0.01)
+  * tansig e Comb2 (trainlm, Nós = 6 e Taxa = 0.01)
+  * tansig e Comb3 (trainlm, Nós = 12 e Taxa = 0.1)
+  * logsig e Comb1 (trainlm, Nós = 3 e Taxa = 0.01)
+  * logsig e Comb2 (trainlm, Nós = 6 e Taxa = 0.01)
+  * logsig e Comb3 (trainlm, Nós = 12 e Taxa = 0.1)
+
+As melhores combinações foram:
+  * Comb 1 => logsig, trainlm, Nós = 3 e Taxa = 0.01
+  * Comb 2 => tansig, trainlm, Nós = 6 e Taxa = 0.01
 
 ##### Etapa 4:
-Nessa quarta etapa iremos selecionar as 3 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com os métodos de sampling selecionados (replicação, redução, SMOTE e SMOTE modificado). Os testes serão feitos da seguinte forma:
+Nessa quarta etapa iremos selecionar as 2 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com os métodos de sampling selecionados (replicação, redução, SMOTE e SMOTE modificado). Os testes serão feitos da seguinte forma:
   * Replicação e Comb1
   * Replicação e Comb2
-  * Replicação e Comb3
   * Redução e Comb1
   * Redução e Comb2
-  * Redução e Comb3
   * SMOTE e Comb1
   * SMOTE e Comb2
-  * SMOTE e Comb3
   * SMOTE modificado e Comb1
   * SMOTE modificado e Comb2
-  * SMOTE modificado e Comb3
 
 A partir de todos esses testes e dos métodos de avaliação que utilizaremos (MSE, Curva ROC e Matriz de Confusão) será possível analisar qual a melhor combinação de parâmetros para resolver o problema proposto.
