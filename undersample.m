@@ -1,20 +1,8 @@
-function [training, trainingclass, validation, validationclass, test, testclass] = splitData(data, class)
+function [training, trainingclass, validation, validationclass, test, testclass] = undersample(data, class)
 
 % Split the dataset according to samples' class
 datac0 = data(class == 0, :);
 datac1 = data(class == 1, :);
-
-% Divide class 0 in training, validation and test
-% Shuffle
-[nrows0, ~] = size(datac0);
-shrows0 = randperm(nrows0);
-datac0 = datac0(shrows0, :);
-% Divide
-nrowstra0 = fix(0.5 * nrows0);
-nrowsval0 = fix(0.25 * nrows0);
-training0 = datac0(1:nrowstra0, :);
-validation0 = datac0((nrowstra0 + 1):(nrowstra0 + 1 + nrowsval0), :);
-test0 = datac0((nrowstra0 + 1 + nrowsval0 + 1):end, :);
 
 % Divide class 1 in training, validation and test
 % Shuffle
@@ -28,11 +16,22 @@ training1 = datac1(1:nrowstra1, :);
 validation1 = datac1((nrowstra1 + 1):(nrowstra1 + 1 + nrowsval1), :);
 test1 = datac1((nrowstra1 + 1 + nrowsval1 + 1):end, :);
 
-% Since class 1 is unbalanced, lets replicate the training and validation
-% sets to have the same size as class 0's training and validation sets
-replications = fix(nrows0 / nrows1);
-training1 = repmat(training1, replications, 1);
-validation1 = repmat(validation1, replications, 1);
+% Divide class 0 in training, validation and test
+% Since class 0 outnumbers class 1, we select a subset of examples which
+% has the same size as the number of examples in the class 1 data
+% Shuffle
+[nrows0, ~] = size(datac0);
+shrows0 = randperm(nrows0);
+datac0 = datac0(shrows0, :);
+% Undersample
+datac0 = datac0(1:nrows1, :);
+[nrows0, ~] = size(datac0);
+% Divide
+nrowstra0 = fix(0.5 * nrows0);
+nrowsval0 = fix(0.25 * nrows0);
+training0 = datac0(1:nrowstra0, :);
+validation0 = datac0((nrowstra0 + 1):(nrowstra0 + 1 + nrowsval0), :);
+test0 = datac0((nrowstra0 + 1 + nrowsval0 + 1):end, :);
 
 % Merge the training, validation and test sets
 % Training
