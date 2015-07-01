@@ -18,9 +18,10 @@ k = 5;
 % Test: 25%
 %[training, trainingclass, validation, validationclass, test, testclass] = oversample(data, class);
 %[training, trainingclass, validation, validationclass, test, testclass] = undersample(data, class);
-[training, trainingclass, validation, validationclass, test, testclass] = smote(data, class, k);
+%[training, trainingclass, validation, validationclass, test, testclass] = smote(data, class, k);
+[training, trainingclass, validation, validationclass, test, testclass] = adaptedsmote(data, class, k);
 
 % Write to a csv file
-csvwrite('mammography-consolidated-training-smotek5.csv', [training, trainingclass])
-csvwrite('mammography-consolidated-validation-smotek5.csv', [validation, validationclass])
-csvwrite('mammography-consolidated-test-smotek5.csv', [test, testclass])
+csvwrite('mammography-consolidated-training-adaptedsmotek5.csv', [training, trainingclass])
+csvwrite('mammography-consolidated-validation-adaptedsmotek5.csv', [validation, validationclass])
+csvwrite('mammography-consolidated-test-adaptedsmotek5.csv', [test, testclass])
