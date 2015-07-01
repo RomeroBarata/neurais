@@ -3,24 +3,24 @@ clear
 
 %    Informacoes sobre a rede e os dados
 numEntradas   = 6;     % Numero de nodos de entrada
-numEscondidos = 3;     % Numero de nodos escondidos
+numEscondidos = 6;     % Numero de nodos escondidos
 numSaidas     = 1;     % Numero de nodos de saida
-numTr         = 10921;   % Numero de padroes de treinamento
-numVal        = 5503;    % Numero de padroes de validacao
+numTr         = 6241;   % Numero de padroes de treinamento
+numVal        = 3127;    % Numero de padroes de validacao
 numTeste      = 2795;    % Numero de padroes de teste
 
 echo off      
 
 %    Lendo arquivos e armazenando dados em matrizes
-dadosTreinamento    = csvread('mammography-consolidated-training.csv')';    % Lendo arquivo de treinamento
+dadosTreinamento    = csvread('mammography-consolidated-training-adaptedsmotek5.csv')';    % Lendo arquivo de treinamento
 entradasTreinamento = dadosTreinamento(1:numEntradas, 1:numTr);
 saidasTreinamento   = dadosTreinamento((numEntradas + 1):(numEntradas + numSaidas), 1:numTr);
 
-dadosValidacao      = csvread('mammography-consolidated-validation.csv')';    % Mesmo processo para validacao
+dadosValidacao      = csvread('mammography-consolidated-validation-adaptedsmotek5.csv')';    % Mesmo processo para validacao
 entradasValidacao   = dadosValidacao(1:numEntradas, 1:numVal);
 saidasValidacao     = dadosValidacao((numEntradas + 1):(numEntradas + numSaidas), 1:numVal);
 
-dadosTeste          = csvread('mammography-consolidated-test.csv')';      % Mesmo processo para teste
+dadosTeste          = csvread('mammography-consolidated-test-adaptedsmotek5.csv')';      % Mesmo processo para teste
 entradasTeste       = dadosTeste(1:numEntradas, 1:numTeste);
 saidasTeste         = dadosTeste((numEntradas + 1):(numEntradas + numSaidas), 1:numTeste);
 
@@ -28,7 +28,7 @@ saidasTeste         = dadosTeste((numEntradas + 1):(numEntradas + numSaidas), 1:
 
 matrizFaixa = repmat([0, 1], numEntradas, 1); % Cria 'matrizFaixa', que possui 'numEntradas' linhas, cada uma sendo igual a [0 1].
 
-rede = newff(matrizFaixa,[numEscondidos numSaidas],{'tansig','tansig'},'traingdm','learngdm','mse');
+rede = newff(matrizFaixa,[numEscondidos numSaidas],{'tansig','tansig'},'trainlm','learngdm','mse');
 % matrizFaixa                    : indica que todas as entradas possuem valores na faixa entre 0 e 1
 % [numEscondidos numSaidas]      : indica a quantidade de nodos escondidos e de saida da rede
 % {'logsig','logsig'}            : indica que os nodos das camadas escondida e de saida terao funcao de ativacao sigmoide logistica

@@ -68,14 +68,18 @@ As melhores combinações foram:
   * Comb 2 => tansig, trainlm, Nós = 6 e Taxa = 0.01
 
 ##### Etapa 4:
-Nessa quarta etapa iremos selecionar as 2 melhores combinações (comb1, comb2 e comb3) da etapa anterior e variar elas juntamente com os métodos de sampling selecionados (replicação, redução, SMOTE e SMOTE modificado). Os testes serão feitos da seguinte forma:
-  * Replicação e Comb1
-  * Replicação e Comb2
-  * Redução e Comb1
-  * Redução e Comb2
-  * SMOTE e Comb1
-  * SMOTE e Comb2
-  * SMOTE modificado e Comb1
-  * SMOTE modificado e Comb2
+Nessa quarta etapa iremos selecionar as 2 melhores combinações (comb1 e comb2) da etapa anterior e variar elas juntamente com os métodos de sampling selecionados (replicação, redução, SMOTE e SMOTE modificado). Os testes serão feitos da seguinte forma:
+  * Replicação e Comb1 (logsig, trainlm, Nós = 3 e Taxa = 0.01)
+  * Replicação e Comb2 (tansig, trainlm, Nós = 6 e Taxa = 0.01)
+  * Redução e Comb1 (logsig, trainlm, Nós = 3 e Taxa = 0.01)
+  * Redução e Comb2 (tansig, trainlm, Nós = 6 e Taxa = 0.01)
+  * SMOTE k = 3 e Comb1 (logsig, trainlm, Nós = 3 e Taxa = 0.01)
+  * SMOTE k = 3 e Comb2 (tansig, trainlm, Nós = 6 e Taxa = 0.01)
+  * SMOTE k = 5 e Comb1 (logsig, trainlm, Nós = 3 e Taxa = 0.01)
+  * SMOTE k = 5 e Comb2 (tansig, trainlm, Nós = 6 e Taxa = 0.01)
+  * SMOTE k = 3 modificado e Comb1 (logsig, trainlm, Nós = 3 e Taxa = 0.01)
+  * SMOTE k = 3 modificado e Comb2 (tansig, trainlm, Nós = 6 e Taxa = 0.01)
+  * SMOTE k = 5 modificado e Comb1 (logsig, trainlm, Nós = 3 e Taxa = 0.01)
+  * SMOTE k = 5 modificado e Comb2 (tansig, trainlm, Nós = 6 e Taxa = 0.01)
 
 A partir de todos esses testes e dos métodos de avaliação que utilizaremos (MSE, Curva ROC e Matriz de Confusão) será possível analisar qual a melhor combinação de parâmetros para resolver o problema proposto.
