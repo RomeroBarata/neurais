@@ -9,14 +9,18 @@ data = data(:, 1:(end - 1));
 % Values are between 0-1
 data = normalizedata(data);
 
+% SMOTE parameters
+k = 5;
+
 % Split the dataset
 % Training: 50%
 % Validation: 25%
 % Test: 25%
 %[training, trainingclass, validation, validationclass, test, testclass] = oversample(data, class);
-[training, trainingclass, validation, validationclass, test, testclass] = undersample(data, class);
+%[training, trainingclass, validation, validationclass, test, testclass] = undersample(data, class);
+[training, trainingclass, validation, validationclass, test, testclass] = smote(data, class, k);
 
 % Write to a csv file
-csvwrite('mammography-consolidated-training-undersample.csv', [training, trainingclass])
-csvwrite('mammography-consolidated-validation-undersample.csv', [validation, validationclass])
-csvwrite('mammography-consolidated-test-undersample.csv', [test, testclass])
+csvwrite('mammography-consolidated-training-smotek5.csv', [training, trainingclass])
+csvwrite('mammography-consolidated-validation-smotek5.csv', [validation, validationclass])
+csvwrite('mammography-consolidated-test-smotek5.csv', [test, testclass])
